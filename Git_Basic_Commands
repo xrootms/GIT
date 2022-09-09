@@ -1,0 +1,60 @@
+git basic commands!
+------------------------------------------------------------------------   
+        apt install git          # to install git.
+        git --version          # to check version of git.
+--------------------------------------------------------------------------
+SETUP : Configuring user information used across all local repositories. 
+        git config --globel user.name "name"             # to set a name 
+        git config --globel user.email "Email ID"         # to set a Email
+        git config --list                                             # to check configuration list.
+---------------------------------------------------------------------------       
+        git init              #  initialize an existing directory as a Git repository 
+        git status          #  show modified files 
+        git add [file]              #  add a file into staging area.
+        git reset [file]            #  Unstage a file. 
+        git diff                      #  diff of what is changed but not staged  
+        git diff --staged         #  diff of what is staged but not yet committed.  
+        git commit -m [message]   #  to commit your staged content.
+        git show  [commit-id]           #  to check details 
+        git log                                #  to show all commits in the current branchs history. 
+        git remote add origin [url]     #  add a git URL as an alias.. 
+        git remote -v                       #  to check the remote status. 
+        git pull origin master            #  To pull commits to remote repository.
+        git push origin master          #  To push commits to remote repository. 
+        git clone url       # to retrieve an entire repository. 
+        git stash           #  Save modified and staged changes/(it stores changes in /.git/refs/stash)
+        git stash pop       # to get back ur stashed changes/
+------------------------------------------------------------------------------------
+//REWRITE HISTORY: Rewriting branches, updating commits and clearing history// 
+git rebase [branch]               # apply any commits of current branch ahead of specified one 
+git reset --hard [commit]         # clear staging area, rewrite working tree from specified commit 
+-------------------------------------------------------------------------------------
+ BRANCH & MERGE:
+        git branch [branch-name]            # create a new branch 
+        git branch                          #  list your branches 
+        git branch -r                       #  list your remote branches
+        git branch -v                       #  to see last commit on each branch
+        git branch --all
+        git remote prune origin --dry-run    # to chech stale (basi) branches
+        git remote prune origin              # to remove already removed remote branch#
+        git checkout                         # switch to another branch  
+        git branch -m [branch name]          #  Rename the current branch  
+        git merge [branch]                   # merge specified branchs history into the current one 
+        git mergetool                             # to resolve merge conflicts 
+        git branch -d [branch name]               # Delete the specified branch  
+        git push origin --delete [branch name]    #  to delete a remote branch 
+        git diff [branchA] [branchB]              # show the diff   
+--------------------------------------------------------------------------------------
+TAGING:
+        git tag [name]  # create tag with name.
+        Example - git tag v1.0        
+        git tag                                # to see tags.
+        git tag [tag-name] [commit id]         # tag from past commit.
+        git tag [tag-name] -m "message"        # to create annotated tag
+        git show [tag-name]                    # show details of particular tag
+        git tag -l "v.1*"                      # show all tags with starting v.1
+        git push origin  [tag-name]            # to push tag to remote
+        git push --tags                        # to push all tags at once
+        git tag -d [tag-name]                  # to delete tag from local
+        git push origin -d [tag-name]          # to delete tag from remote
+       --------------------------------------------------------------------------------
